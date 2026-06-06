@@ -949,6 +949,39 @@
       transform: translateY(0);
     }
 
+    .field-error {
+      font-size: 0.78rem;
+      color: #f87171;
+      margin-top: 3px;
+      min-height: 16px;
+      display: block;
+    }
+
+    .form-error {
+      display: none;
+      padding: 12px 16px;
+      background: rgba(248,113,113,0.08);
+      border: 1px solid rgba(248,113,113,0.3);
+      border-radius: 10px;
+      color: #f87171;
+      font-size: 0.88rem;
+      margin-bottom: 16px;
+    }
+
+    .form-error:not(:empty) { display: block; }
+
+    input[aria-invalid="true"],
+    select[aria-invalid="true"],
+    textarea[aria-invalid="true"] {
+      border-color: #f87171;
+    }
+
+    .form-submit:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+    }
+
     /* ── SCROLL INDICATOR ── */
     .scroll-indicator {
       position: absolute;
@@ -1363,19 +1396,26 @@
 
       <!-- Form -->
       <div class="contact-form fade-in" role="main" aria-label="Support contact form">
-        <form id="support-form" novalidate onsubmit="handleSubmit(event)">
+        <div data-fs-success class="form-success" role="alert" aria-live="polite">
+          ✅ &nbsp;Message sent! We'll reply to your email within 24–72 hours.
+        </div>
+        <div data-fs-error class="form-error" role="alert" aria-live="polite"></div>
+
+        <form id="support-form" data-fs-field>
           <div class="form-grid">
             <div class="form-group">
               <label for="name">Your Name <span aria-hidden="true">*</span></label>
-              <input type="text" id="name" name="name" placeholder="Alex Johnson" required autocomplete="name" />
+              <input type="text" id="name" name="name" placeholder="Alex Johnson" required autocomplete="name" data-fs-field />
+              <span class="field-error" data-fs-error="name"></span>
             </div>
             <div class="form-group">
               <label for="email">Email Address <span aria-hidden="true">*</span></label>
-              <input type="email" id="email" name="email" placeholder="alex@example.com" required autocomplete="email" />
+              <input type="email" id="email" name="email" placeholder="alex@example.com" required autocomplete="email" data-fs-field />
+              <span class="field-error" data-fs-error="email"></span>
             </div>
             <div class="form-group">
               <label for="device">Device Type <span aria-hidden="true">*</span></label>
-              <select id="device" name="device" required>
+              <select id="device" name="device" required data-fs-field>
                 <option value="" disabled selected>Select your device</option>
                 <option value="iphone">iPhone</option>
                 <option value="ipad">iPad</option>
@@ -1383,10 +1423,11 @@
                 <option value="android-tablet">Android Tablet</option>
                 <option value="other">Other</option>
               </select>
+              <span class="field-error" data-fs-error="device"></span>
             </div>
             <div class="form-group">
               <label for="category">Issue Category <span aria-hidden="true">*</span></label>
-              <select id="category" name="category" required>
+              <select id="category" name="category" required data-fs-field>
                 <option value="" disabled selected>Select a category</option>
                 <option value="purchase">Purchase / Coins Not Received</option>
                 <option value="ads">Ads Not Showing</option>
@@ -1396,17 +1437,16 @@
                 <option value="gameplay">Gameplay Question</option>
                 <option value="other">Other</option>
               </select>
+              <span class="field-error" data-fs-error="category"></span>
             </div>
             <div class="form-group full">
               <label for="message">Message <span aria-hidden="true">*</span></label>
-              <textarea id="message" name="message" placeholder="Please describe your issue in as much detail as possible. Include any error messages, what you were doing when it happened, and steps to reproduce if possible." required minlength="20"></textarea>
+              <textarea id="message" name="message" placeholder="Please describe your issue in as much detail as possible. Include any error messages, what you were doing when it happened, and steps to reproduce if possible." required minlength="20" data-fs-field></textarea>
+              <span class="field-error" data-fs-error="message"></span>
             </div>
           </div>
-          <button type="submit" class="form-submit">Send Message →</button>
+          <button type="submit" class="form-submit" data-fs-submit-btn>Send Message →</button>
         </form>
-        <div class="form-success" id="form-success" role="alert" aria-live="polite">
-          ✅ &nbsp;Message sent! We'll reply to your email within 24–72 hours.
-        </div>
       </div>
 
     </div>
@@ -1496,28 +1536,9 @@
     alert('Terms of Service — Please contact druidxdd@gmail.com for the full Terms of Service document.');
   }
 
-  // ── FORM SUBMIT ──
-  function handleSubmit(e) {
-    e.preventDefault();
-    const form = document.getElementById('support-form');
-    const success = document.getElementById('form-success');
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-    if (!name || !email || !message) return;
-    // Build mailto
-    const subject = encodeURIComponent('Perfect Tap Support Request – ' + document.getElementById('category').value);
-    const body = encodeURIComponent(
-      'Name: ' + name + '\nEmail: ' + email +
-      '\nDevice: ' + document.getElementById('device').value +
-      '\nCategory: ' + document.getElementById('category').value +
-      '\n\nMessage:\n' + message
-    );
-    window.location.href = 'mailto:druidxdd@gmail.com?subject=' + subject + '&body=' + body;
-    form.style.opacity = '0.4';
-    success.style.display = 'block';
-    setTimeout(() => { form.style.opacity = '1'; success.style.display = 'none'; form.reset(); }, 5000);
-  }
+  // ── FORMSPREE INIT ──
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#support-form', formId: 'mpqepaek' });
 
   // ── SCROLL ANIMATION ──
   const observer = new IntersectionObserver((entries) => {
@@ -1545,5 +1566,6 @@
   });
 </script>
 
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
