@@ -949,57 +949,6 @@
       transform: translateY(0);
     }
 
-    /* ── PRIVACY PAGE ── */
-    #privacy-page {
-      display: none;
-      min-height: 100vh;
-      padding-top: 80px;
-    }
-
-    #privacy-page.active {
-      display: block;
-    }
-
-    #main-content.hidden {
-      display: none;
-    }
-
-    .prose h2 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--white);
-      margin: 32px 0 12px;
-      letter-spacing: -0.02em;
-    }
-
-    .prose p, .prose li {
-      font-size: 0.95rem;
-      color: var(--muted);
-      line-height: 1.75;
-      margin-bottom: 10px;
-    }
-
-    .prose ul { padding-left: 20px; }
-    .prose li { margin-bottom: 6px; }
-
-    .prose strong { color: var(--text); }
-
-    .back-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--neon-bright);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-bottom: 32px;
-      cursor: pointer;
-      background: none;
-      border: none;
-    }
-
-    .back-btn:hover { color: var(--accent); }
-
     /* ── SCROLL INDICATOR ── */
     .scroll-indicator {
       position: absolute;
@@ -1355,9 +1304,9 @@
           <span class="tag">📊 Analytics</span>
           <span class="tag">🚫 No Data Selling</span>
         </div>
-        <button class="btn-ghost" onclick="showPrivacy(event)" aria-label="Read full privacy policy">
+        <a href="https://perfecttap-privacy.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn-ghost" aria-label="Read full privacy policy">
           Read Full Privacy Policy →
-        </button>
+        </a>
       </div>
     </div>
   </div>
@@ -1466,73 +1415,7 @@
 
 </div><!-- end #main-content -->
 
-<!-- ══════════════════════════════════════ -->
-<!--  PRIVACY POLICY PAGE                   -->
-<!-- ══════════════════════════════════════ -->
-<div id="privacy-page" aria-label="Privacy Policy page">
-  <section>
-    <div class="section-inner">
-      <button class="back-btn" onclick="showMain(event)" aria-label="Go back to main page">
-        ← Back to Support
-      </button>
-
-      <p class="section-label">Legal</p>
-      <h2 class="section-title">Privacy Policy</h2>
-      <p class="section-subtitle" style="margin-bottom: 8px;">Last updated: June 2025 &nbsp;·&nbsp; Developer: Toni Dobrinski</p>
-
-      <div class="prose">
-        <h2>1. Introduction</h2>
-        <p>This Privacy Policy explains how Toni Dobrinski ("we", "us", or "our") collects, uses, and protects your information when you use Perfect Tap: Reflex Challenge (the "App"). By using the App, you agree to the practices described in this policy.</p>
-
-        <h2>2. Information We Collect</h2>
-        <p>We collect the following types of information:</p>
-        <ul>
-          <li><strong>Device identifiers:</strong> Including Advertising ID (IDFA on iOS, GAID on Android), device model, OS version, and device language, used for ad targeting and analytics.</li>
-          <li><strong>Usage data:</strong> Game session data, scores, and in-app behavior to improve gameplay and measure app performance.</li>
-          <li><strong>Purchase data:</strong> Transaction confirmations from Apple App Store or Google Play Store (we do not process or store payment details directly).</li>
-          <li><strong>Ad interaction data:</strong> Collected by Google AdMob to deliver and measure ads.</li>
-        </ul>
-
-        <h2>3. How We Use Your Information</h2>
-        <ul>
-          <li>To operate and improve the App and its features</li>
-          <li>To display advertisements via Google AdMob (including personalized ads where consent is provided)</li>
-          <li>To process and verify in-app purchases</li>
-          <li>To analyze app usage and performance through anonymized analytics</li>
-          <li>To respond to your support requests</li>
-        </ul>
-
-        <h2>4. Advertising — Google AdMob</h2>
-        <p>We use Google AdMob to serve interstitial and rewarded video advertisements. AdMob may use device identifiers to deliver targeted ads based on your interests. Google's data collection is governed by the <strong>Google Privacy Policy</strong> (policies.google.com/privacy). You can opt out of personalized advertising through your device's advertising settings (Limit Ad Tracking on iOS, or Opt out of Ads Personalization on Android).</p>
-
-        <h2>5. In-App Purchases</h2>
-        <p>All purchases are processed securely by Apple App Store (iOS) or Google Play Store (Android). We do not have access to your credit card or payment information. Purchase records are associated with your store account and are used solely to fulfil your in-game items.</p>
-
-        <h2>6. Data Sharing</h2>
-        <p>We do not sell your personal data. We may share anonymized or aggregated data with analytics providers. Third-party SDKs (such as Google AdMob) have their own privacy practices which you should review independently.</p>
-
-        <h2>7. Data Retention</h2>
-        <p>We retain usage and analytics data for up to 24 months in anonymized form. Support correspondence may be retained as long as necessary to resolve your issue. You may request deletion of any personal data by contacting us at <a href="mailto:druidxdd@gmail.com" style="color:var(--neon-bright)">druidxdd@gmail.com</a>.</p>
-
-        <h2>8. Children's Privacy</h2>
-        <p>Perfect Tap is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us and we will take steps to delete it.</p>
-
-        <h2>9. Your Rights</h2>
-        <p>Depending on your jurisdiction, you may have the right to access, correct, or delete your personal data, or to object to certain processing. To exercise these rights, contact us at <a href="mailto:druidxdd@gmail.com" style="color:var(--neon-bright)">druidxdd@gmail.com</a>.</p>
-
-        <h2>10. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date. Continued use of the App constitutes acceptance of the updated policy.</p>
-
-        <h2>11. Contact</h2>
-        <p>For privacy-related questions, contact: <a href="mailto:druidxdd@gmail.com" style="color:var(--neon-bright)">druidxdd@gmail.com</a></p>
-
-        <p style="margin-top: 32px; padding: 20px; background: rgba(59,130,246,0.06); border-radius: 10px; border: 1px solid rgba(59,130,246,0.15);">
-          <strong>Note:</strong> This Privacy Policy is provided for informational purposes. For legal advice tailored to your situation, consult a qualified attorney.
-        </p>
-      </div>
-    </div>
-  </section>
-</div>
+<!-- Privacy Policy is hosted externally at https://perfecttap-privacy.netlify.app/ -->
 
 <!-- ── FOOTER ── -->
 <footer role="contentinfo">
@@ -1568,16 +1451,16 @@
       <div class="footer-links-group">
         <h4>Legal</h4>
         <ul>
-          <li><a href="#" onclick="showPrivacy(event)">Privacy Policy</a></li>
+          <li><a href="https://perfecttap-privacy.netlify.app/" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
           <li><a href="#" onclick="showTerms(event)">Terms of Service</a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p class="footer-copy">© 2025 Toni Dobrinski. All Rights Reserved.</p>
+      <p class="footer-copy">© 2026 Toni Dobrinski. All Rights Reserved.</p>
       <nav class="footer-legal" aria-label="Legal links">
-        <a href="#" onclick="showPrivacy(event)">Privacy Policy</a>
+        <a href="https://perfecttap-privacy.netlify.app/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
         <a href="#" onclick="showTerms(event)">Terms of Service</a>
         <a href="mailto:druidxdd@gmail.com">Support</a>
       </nav>
@@ -1603,18 +1486,8 @@
   }
 
   // ── PAGE ROUTING ──
-  function showPrivacy(e) {
-    e.preventDefault();
-    document.getElementById('main-content').classList.add('hidden');
-    const pp = document.getElementById('privacy-page');
-    pp.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
   function showMain(e) {
     e.preventDefault();
-    document.getElementById('main-content').classList.remove('hidden');
-    document.getElementById('privacy-page').classList.remove('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
