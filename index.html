@@ -85,7 +85,7 @@
   <header>
     <div class="topline">Official Support Center</div>
     <h1>Perfect Tap:<br />Reflex Challenge</h1>
-    <p class="lead">Need help with coins, accounts, ads, purchases, offline sync, or leaderboards? This page explains how the Game works and how to contact support.</p>
+    <p class="lead">Need help with coins, accounts, ads, purchases, offline sync, daily goals, cosmetics, or leaderboards? This page explains how the Game works and how to contact support.</p>
     <div class="actions">
       <a class="btn primary" href="mailto:druidxdd@gmail.com?subject=Perfect%20Tap%20Support">Contact Support</a>
       <a class="btn" href="#faq">Read FAQ</a>
@@ -112,10 +112,10 @@
         </div>
         <div class="card">
           <h3>Progress and Cloud Save</h3>
-          <p>You can play as a guest or optionally create an account. Signed-in players can sync coins, high scores, achievements, challenge unlocks, and leaderboard progress through Firebase.</p>
+          <p>You can play as a guest or optionally create an account. Signed-in players can sync coins, scores, statistics, achievements, challenge unlocks, mastery, titles, cosmetics, daily goals, and leaderboard progress through Firebase.</p>
         </div>
       </div>
-      <p><span class="pill">Guest Mode</span><span class="pill">Cloud Save</span><span class="pill">Global Leaderboard</span><span class="pill">Achievements</span><span class="pill">Challenge Modes</span><span class="pill">Optional Ads</span><span class="pill">Coin Packs</span></p>
+      <p><span class="pill">Guest Mode</span><span class="pill">Cloud Save</span><span class="pill">Global + Weekly Leaderboards</span><span class="pill">Achievements</span><span class="pill">Daily Goals</span><span class="pill">Cosmetics + Titles</span><span class="pill">Challenge Modes</span><span class="pill">Optional Ads</span><span class="pill">Coin Packs</span></p>
     </section>
 
     <section id="faq">
@@ -128,7 +128,7 @@
 
         <details>
           <summary>How do I earn coins?</summary>
-          <p>You earn coins by scoring points, unlocking certain achievements, and optionally buying coin packs. Coins can be used to continue after a miss or unlock challenge modes.</p>
+          <p>You earn coins by scoring points, claiming eligible achievement and daily goal rewards, watching optional rewarded ads, or buying coin packs. Coins can be used to continue after a miss or unlock challenge modes and cosmetics.</p>
         </details>
 
         <details>
@@ -138,7 +138,7 @@
 
         <details>
           <summary>How do rewarded ads work?</summary>
-          <p>Rewarded ads are optional. In the current version, they are mainly used as a fallback continue option when you do not have enough coins. Rewarded ads depend on internet connection, region, device, and ad inventory.</p>
+          <p>Rewarded ads are optional. They may let you continue a run, receive 25 bonus coins, or double an eligible daily goal reward. A reward is granted only after the ad provider confirms completion. Availability depends on internet connection, region, device, and ad inventory.</p>
         </details>
 
         <details>
@@ -167,8 +167,18 @@
         </details>
 
         <details>
-          <summary>How does the global leaderboard work?</summary>
-          <p>The global leaderboard requires sign-in and internet. Your display name and best score-related details may be visible to other players. Guest scores remain personal/local unless you sign in and choose to move your guest progress to your account.</p>
+          <summary>How do the leaderboards work?</summary>
+          <p>Global and weekly leaderboards require sign-in and internet. Your display name and best score-related details may be visible to other players. The weekly board starts a new ranking period each week. Guest scores remain personal/local unless you sign in and choose to move your guest progress to your account.</p>
+        </details>
+
+        <details>
+          <summary>How do Daily Goals work?</summary>
+          <p>You receive three rotating goals for the current day. Complete a goal and claim its coin reward. When a rewarded ad is available, you may choose to watch it before claiming to double that goal's reward. Unclaimed goals and rewards do not carry over after the daily set changes.</p>
+        </details>
+
+        <details>
+          <summary>Where are my cosmetics and player titles saved?</summary>
+          <p>Owned and equipped cosmetics and unlocked titles are stored locally for guests and in Firebase for signed-in accounts. Signing in may offer to merge guest progress with the account; choose carefully if the device and account contain different progress.</p>
         </details>
 
         <details>
@@ -232,7 +242,7 @@
 
     <section id="privacy">
       <h2>Privacy and Data</h2>
-      <div class="notice">Perfect Tap uses Firebase for optional accounts/cloud save, Google AdMob for ads, and Apple/Google for purchases. We do not store your payment card details and we do not sell your personal information.</div>
+      <div class="notice">Perfect Tap uses Firebase for optional accounts, cloud save, analytics, and crash reporting; Google AdMob for ads; and Apple/Google for purchases. We do not store your payment card details and we do not sell your personal information.</div>
       <p><a href="https://perfecttap-privacy.netlify.app/">Read the full Privacy Policy</a> and <a href="https://perfecttap-terms.netlify.app/">Terms of Use</a>.</p>
     </section>
 
